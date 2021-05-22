@@ -79,7 +79,7 @@ namespace Calculator
             // 
             // btn_equal
             // 
-            this.btn_equal.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_equal.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_equal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_equal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_equal.Location = new System.Drawing.Point(232, 344);
@@ -115,7 +115,7 @@ namespace Calculator
             // 
             // btn_subtract
             // 
-            this.btn_subtract.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_subtract.BackColor = System.Drawing.Color.Pink;
             this.btn_subtract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_subtract.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_subtract.Location = new System.Drawing.Point(232, 226);
@@ -163,7 +163,7 @@ namespace Calculator
             // 
             // btn_add
             // 
-            this.btn_add.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_add.BackColor = System.Drawing.Color.Pink;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_add.Location = new System.Drawing.Point(232, 285);
@@ -211,7 +211,7 @@ namespace Calculator
             // 
             // btn_multiply
             // 
-            this.btn_multiply.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_multiply.BackColor = System.Drawing.Color.Pink;
             this.btn_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_multiply.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_multiply.Location = new System.Drawing.Point(232, 167);
@@ -247,7 +247,7 @@ namespace Calculator
             // 
             // btn_clearAll
             // 
-            this.btn_clearAll.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_clearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clearAll.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_clearAll.Location = new System.Drawing.Point(10, 108);
@@ -259,7 +259,7 @@ namespace Calculator
             // 
             // btn_divide
             // 
-            this.btn_divide.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_divide.BackColor = System.Drawing.Color.Pink;
             this.btn_divide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_divide.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_divide.Location = new System.Drawing.Point(232, 108);
@@ -283,7 +283,7 @@ namespace Calculator
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_delete.Location = new System.Drawing.Point(84, 108);
