@@ -329,6 +329,7 @@ namespace Calculator
             this.Controls.Add(this.btn_equal);
             this.Controls.Add(this.btn_dot);
             this.Controls.Add(this.btn_0);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
