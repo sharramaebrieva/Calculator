@@ -36,5 +36,10 @@ namespace Calculator
                 textBoxDisplay.Text = "-";
             }
         }
+
+        private void Button_ClickClearAll(object sender, EventArgs e)
+        {
+            textBoxDisplay.Clear();
+        }
     }
 }

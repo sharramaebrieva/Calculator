@@ -268,6 +268,7 @@ namespace Calculator
             this.btn_clearAll.TabIndex = 19;
             this.btn_clearAll.Text = "CA";
             this.btn_clearAll.UseVisualStyleBackColor = false;
+            this.btn_clearAll.Click += new System.EventHandler(this.Button_ClickClearAll);
             // 
             // btn_divide
             // 
@@ -308,11 +309,16 @@ namespace Calculator
             // 
             // textBoxDisplay
             // 
+            this.textBoxDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDisplay.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxDisplay.Location = new System.Drawing.Point(10, 27);
             this.textBoxDisplay.Multiline = true;
             this.textBoxDisplay.Name = "textBoxDisplay";
             this.textBoxDisplay.Size = new System.Drawing.Size(292, 75);
             this.textBoxDisplay.TabIndex = 20;
+            this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDisplay.TextChanged += new System.EventHandler(this.textBoxDisplay_TextChanged);
             // 
             // Calculator
@@ -343,6 +349,7 @@ namespace Calculator
             this.Controls.Add(this.btn_equal);
             this.Controls.Add(this.btn_dot);
             this.Controls.Add(this.btn_0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calculator";
