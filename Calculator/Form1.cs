@@ -17,5 +17,24 @@ namespace Calculator
             InitializeComponent();
         }
 
+        private void textBoxDisplay_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+     
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button numbers = (Button)sender;
+            textBoxDisplay.Text = textBoxDisplay.Text + numbers.Text;
+        }
+
+        private void Button_ClickSign(object sender, EventArgs e)
+        {
+            if (textBoxDisplay.Text == "")
+            {
+                textBoxDisplay.Text = "-";
+            }
+        }
     }
 }
