@@ -90,6 +90,7 @@ namespace Calculator
             this.btn_equal.TabIndex = 2;
             this.btn_equal.Text = "=";
             this.btn_equal.UseVisualStyleBackColor = false;
+            this.btn_equal.Click += new System.EventHandler(this.ButtonClick_Equal);
             // 
             // btn_00
             // 
@@ -128,6 +129,7 @@ namespace Calculator
             this.btn_subtract.TabIndex = 6;
             this.btn_subtract.Text = "-";
             this.btn_subtract.UseVisualStyleBackColor = false;
+            this.btn_subtract.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_6
             // 
@@ -179,6 +181,7 @@ namespace Calculator
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "+";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_3
             // 
@@ -230,6 +233,7 @@ namespace Calculator
             this.btn_multiply.TabIndex = 14;
             this.btn_multiply.Text = "×";
             this.btn_multiply.UseVisualStyleBackColor = false;
+            this.btn_multiply.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_9
             // 
@@ -281,6 +285,7 @@ namespace Calculator
             this.btn_divide.TabIndex = 18;
             this.btn_divide.Text = "÷";
             this.btn_divide.UseVisualStyleBackColor = false;
+            this.btn_divide.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_sign
             // 
@@ -306,6 +311,7 @@ namespace Calculator
             this.btn_delete.TabIndex = 16;
             this.btn_delete.Text = "Del";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.ButtonClick_Delete);
             // 
             // textBoxDisplay
             // 
@@ -313,10 +319,10 @@ namespace Calculator
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDisplay.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxDisplay.Location = new System.Drawing.Point(10, 27);
+            this.textBoxDisplay.Location = new System.Drawing.Point(10, 12);
             this.textBoxDisplay.Multiline = true;
             this.textBoxDisplay.Name = "textBoxDisplay";
-            this.textBoxDisplay.Size = new System.Drawing.Size(292, 75);
+            this.textBoxDisplay.Size = new System.Drawing.Size(292, 54);
             this.textBoxDisplay.TabIndex = 20;
             this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDisplay.TextChanged += new System.EventHandler(this.textBoxDisplay_TextChanged);
@@ -355,6 +361,7 @@ namespace Calculator
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
