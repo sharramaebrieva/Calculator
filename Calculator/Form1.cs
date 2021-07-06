@@ -66,6 +66,10 @@ namespace Calculator
             {
                 textBoxResult.Text = (float.Parse(value) - float.Parse(textBoxResult.Text)).ToString();
             }
+            if (operation == "x")
+            {
+                textBoxResult.Text = (float.Parse(value) * float.Parse(textBoxResult.Text)).ToString();
+            }
         }
 
         private void ButtonClick_Delete(object sender, EventArgs e)
@@ -98,6 +102,15 @@ namespace Calculator
             Button subtract = (Button)sender;
             operation = "-";
             textBoxDisplay.Text = value + subtract.Text;
+            textBoxResult.Text = "";
+        }
+
+        private void ButtonClick_Multiply(object sender, EventArgs e)
+        {
+            operator_pressed = true;
+            Button multiply = (Button)sender;
+            operation = "x";
+            textBoxDisplay.Text = value + multiply.Text;
             textBoxResult.Text = "";
         }
     }

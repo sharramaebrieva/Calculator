@@ -234,6 +234,7 @@ namespace Calculator
             this.btn_multiply.TabIndex = 14;
             this.btn_multiply.Text = "×";
             this.btn_multiply.UseVisualStyleBackColor = false;
+            this.btn_multiply.Click += new System.EventHandler(this.ButtonClick_Multiply);
             // 
             // btn_9
             // 
