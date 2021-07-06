@@ -13,6 +13,7 @@ namespace Calculator
     public partial class Calculator : Form
     {
         string value = "";
+        string value2 = "";
         string operation = "";
         bool operator_pressed = false;
 
@@ -39,15 +40,10 @@ namespace Calculator
             {
                 Button numbers = (Button)sender;
                 textBoxResult.Text += numbers.Text;
+                value2 = textBoxResult.Text;
             }
-        }
 
-        private void Button_ClickSign(object sender, EventArgs e)
-        {
-            if (textBoxDisplay.Text == "")
-            {
-                textBoxDisplay.Text = "-";
-            }
+            
         }
 
         private void Button_ClickClearAll(object sender, EventArgs e)
@@ -60,18 +56,22 @@ namespace Calculator
         {
             if (operation == "+")
             {
+                textBoxDisplay.Text += value2;
                 textBoxResult.Text = (float.Parse(value) + float.Parse(textBoxResult.Text)).ToString();
             }
             if (operation == "-")
             {
+                textBoxDisplay.Text += value2;
                 textBoxResult.Text = (float.Parse(value) - float.Parse(textBoxResult.Text)).ToString();
             }
             if (operation == "x")
             {
+                textBoxDisplay.Text += value2;
                 textBoxResult.Text = (float.Parse(value) * float.Parse(textBoxResult.Text)).ToString();
             }
             if (operation == "/")
             {
+                textBoxDisplay.Text += value2;
                 textBoxResult.Text = (float.Parse(value) / float.Parse(textBoxResult.Text)).ToString();
             }
         }
@@ -125,6 +125,11 @@ namespace Calculator
             operation = "/";
             textBoxDisplay.Text = value + divide.Text;
             textBoxResult.Text = "";
+        }
+
+        private void ButtonClick_Sign(object sender, EventArgs e)
+        {
+            textBoxResult.Text = "-" + textBoxResult.Text;
         }
     }
 }

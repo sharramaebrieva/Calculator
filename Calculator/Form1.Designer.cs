@@ -299,7 +299,7 @@ namespace Calculator
             this.btn_sign.TabIndex = 17;
             this.btn_sign.Text = "+/-";
             this.btn_sign.UseVisualStyleBackColor = false;
-            this.btn_sign.Click += new System.EventHandler(this.Button_ClickSign);
+            this.btn_sign.Click += new System.EventHandler(this.ButtonClick_Sign);
             // 
             // btn_delete
             // 
