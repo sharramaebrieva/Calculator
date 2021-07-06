@@ -12,8 +12,9 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        
-        
+        string value = "";
+        string operation = "";
+        bool operator_pressed = false;
 
         public Calculator()
         {
@@ -28,13 +29,17 @@ namespace Calculator
      
         private void Button_Click(object sender, EventArgs e)
         {
-            Button numbers = (Button)sender;
-            textBoxDisplay.Text = textBoxDisplay.Text + numbers.Text;
-
-            btn_add.Enabled = true;
-            btn_subtract.Enabled = true;
-            btn_multiply.Enabled = true;
-            btn_divide.Enabled = true;
+            if (textBoxDisplay.Text == "")
+            {
+                Button numbers = (Button)sender;
+                textBoxResult.Text += numbers.Text;
+                value = textBoxResult.Text;
+            }
+            else
+            {
+                Button numbers = (Button)sender;
+                textBoxResult.Text += numbers.Text;
+            }
         }
 
         private void Button_ClickSign(object sender, EventArgs e)
@@ -48,48 +53,19 @@ namespace Calculator
         private void Button_ClickClearAll(object sender, EventArgs e)
         {
             textBoxDisplay.Clear();
-        }
-
-        private void Button_ClickAdd(object sender, EventArgs e)
-        {
-            if (textBoxDisplay.Text == "")
-            {
-                textBoxDisplay.Text = textBoxDisplay.Text;
-            }
-            else
-            {
-                textBoxDisplay.Text = textBoxDisplay.Text + " + ";
-            }
-
-            
-            
+            textBoxResult.Clear();
         }
 
         private void ButtonClick_Equal(object sender, EventArgs e)
         {
-
-        }
-
-        
-
-        private void ButtonClick_Operator(object sender, EventArgs e)
-        {
-            Button operators = (Button)sender;
-
-            if (textBoxDisplay.Text == "")
+            if (operation == "+")
             {
-                textBoxDisplay.Text = textBoxDisplay.Text;
+                textBoxResult.Text = (float.Parse(value) + float.Parse(textBoxResult.Text)).ToString();
             }
-            else
-            { 
-                textBoxDisplay.Text = textBoxDisplay.Text + " " + operators.Text + " ";
-                btn_add.Enabled = false;
-                btn_subtract.Enabled = false;
-                btn_multiply.Enabled = false;
-                btn_divide.Enabled = false;
+            if (operation == "-")
+            {
+                textBoxResult.Text = (float.Parse(value) - float.Parse(textBoxResult.Text)).ToString();
             }
-            
-
         }
 
         private void ButtonClick_Delete(object sender, EventArgs e)
@@ -100,6 +76,29 @@ namespace Calculator
         private void Calculator_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonClick_Add(object sender, EventArgs e)
+        {
+            operator_pressed = true;
+            Button add = (Button)sender;
+            operation = "+";
+            textBoxDisplay.Text = value + add.Text;
+            textBoxResult.Text = "";
+        }
+
+        private void ButtonClick_Subtract(object sender, EventArgs e)
+        {
+            operator_pressed = true;
+            Button subtract = (Button)sender;
+            operation = "-";
+            textBoxDisplay.Text = value + subtract.Text;
+            textBoxResult.Text = "";
         }
     }
 }

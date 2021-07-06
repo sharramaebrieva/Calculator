@@ -51,6 +51,7 @@ namespace Calculator
             this.btn_sign = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.textBoxDisplay = new System.Windows.Forms.TextBox();
+            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_0
@@ -129,7 +130,7 @@ namespace Calculator
             this.btn_subtract.TabIndex = 6;
             this.btn_subtract.Text = "-";
             this.btn_subtract.UseVisualStyleBackColor = false;
-            this.btn_subtract.Click += new System.EventHandler(this.ButtonClick_Operator);
+            this.btn_subtract.Click += new System.EventHandler(this.ButtonClick_Subtract);
             // 
             // btn_6
             // 
@@ -181,7 +182,7 @@ namespace Calculator
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "+";
             this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.ButtonClick_Operator);
+            this.btn_add.Click += new System.EventHandler(this.ButtonClick_Add);
             // 
             // btn_3
             // 
@@ -233,7 +234,6 @@ namespace Calculator
             this.btn_multiply.TabIndex = 14;
             this.btn_multiply.Text = "×";
             this.btn_multiply.UseVisualStyleBackColor = false;
-            this.btn_multiply.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_9
             // 
@@ -285,7 +285,6 @@ namespace Calculator
             this.btn_divide.TabIndex = 18;
             this.btn_divide.Text = "÷";
             this.btn_divide.UseVisualStyleBackColor = false;
-            this.btn_divide.Click += new System.EventHandler(this.ButtonClick_Operator);
             // 
             // btn_sign
             // 
@@ -318,14 +317,28 @@ namespace Calculator
             this.textBoxDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDisplay.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxDisplay.Location = new System.Drawing.Point(10, 12);
             this.textBoxDisplay.Multiline = true;
             this.textBoxDisplay.Name = "textBoxDisplay";
-            this.textBoxDisplay.Size = new System.Drawing.Size(292, 54);
+            this.textBoxDisplay.Size = new System.Drawing.Size(292, 51);
             this.textBoxDisplay.TabIndex = 20;
             this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDisplay.TextChanged += new System.EventHandler(this.textBoxDisplay_TextChanged);
+            // 
+            // textBoxResult
+            // 
+            this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxResult.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxResult.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxResult.Location = new System.Drawing.Point(10, 62);
+            this.textBoxResult.Multiline = true;
+            this.textBoxResult.Name = "textBoxResult";
+            this.textBoxResult.Size = new System.Drawing.Size(292, 40);
+            this.textBoxResult.TabIndex = 21;
+            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // Calculator
             // 
@@ -334,6 +347,7 @@ namespace Calculator
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(313, 406);
+            this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.textBoxDisplay);
             this.Controls.Add(this.btn_clearAll);
             this.Controls.Add(this.btn_divide);
@@ -390,6 +404,7 @@ namespace Calculator
         private System.Windows.Forms.Button btn_sign;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.TextBox textBoxDisplay;
+        private System.Windows.Forms.TextBox textBoxResult;
     }
 }
 
