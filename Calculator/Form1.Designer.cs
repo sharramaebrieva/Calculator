@@ -286,6 +286,7 @@ namespace Calculator
             this.btn_divide.TabIndex = 18;
             this.btn_divide.Text = "÷";
             this.btn_divide.UseVisualStyleBackColor = false;
+            this.btn_divide.Click += new System.EventHandler(this.ButtonClick_Divide);
             // 
             // btn_sign
             // 

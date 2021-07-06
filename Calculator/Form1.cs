@@ -70,6 +70,10 @@ namespace Calculator
             {
                 textBoxResult.Text = (float.Parse(value) * float.Parse(textBoxResult.Text)).ToString();
             }
+            if (operation == "/")
+            {
+                textBoxResult.Text = (float.Parse(value) / float.Parse(textBoxResult.Text)).ToString();
+            }
         }
 
         private void ButtonClick_Delete(object sender, EventArgs e)
@@ -111,6 +115,15 @@ namespace Calculator
             Button multiply = (Button)sender;
             operation = "x";
             textBoxDisplay.Text = value + multiply.Text;
+            textBoxResult.Text = "";
+        }
+
+        private void ButtonClick_Divide(object sender, EventArgs e)
+        {
+            operator_pressed = true;
+            Button divide = (Button)sender;
+            operation = "/";
+            textBoxDisplay.Text = value + divide.Text;
             textBoxResult.Text = "";
         }
     }
