@@ -48,7 +48,6 @@ namespace Calculator
             }
 
             string dot = ".";
-            
             if (textBoxResult.Text.Contains(dot))
             {
                 dot = "";
@@ -92,7 +91,11 @@ namespace Calculator
 
         private void ButtonClick_Delete(object sender, EventArgs e)
         {
-
+            try
+            {
+                textBoxResult.Text = textBoxResult.Text.Remove(textBoxResult.Text.Length - 1);
+            }
+            catch { }
         }
 
         private void Calculator_Load(object sender, EventArgs e)
