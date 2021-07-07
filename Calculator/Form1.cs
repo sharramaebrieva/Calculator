@@ -15,7 +15,11 @@ namespace Calculator
         string value = "";
         string value2 = "";
         string operation = "";
+        string initial_result = "";
+        string initial_display = "";
         bool operator_pressed = false;
+        string negasign = "";
+        string dot = "";
 
         public Calculator()
         {
@@ -30,18 +34,27 @@ namespace Calculator
      
         private void Button_Click(object sender, EventArgs e)
         {
+            Button numbers = (Button)sender;
+
             if (textBoxDisplay.Text == "")
             {
-                Button numbers = (Button)sender;
                 textBoxResult.Text += numbers.Text;
                 value = textBoxResult.Text;
             }
             else
             {
-                Button numbers = (Button)sender;
                 textBoxResult.Text += numbers.Text;
                 value2 = textBoxResult.Text;
             }
+
+            string dot = ".";
+            
+            if (textBoxResult.Text.Contains(dot))
+            {
+                dot = "";
+            }
+            
+           
 
             
         }
@@ -50,6 +63,7 @@ namespace Calculator
         {
             textBoxDisplay.Clear();
             textBoxResult.Clear();
+            btn_add.Enabled = true;
         }
 
         private void ButtonClick_Equal(object sender, EventArgs e)
@@ -96,8 +110,9 @@ namespace Calculator
             operator_pressed = true;
             Button add = (Button)sender;
             operation = "+";
-            textBoxDisplay.Text = value + add.Text;
+            textBoxDisplay.Text = value + " " + add.Text + " ";
             textBoxResult.Text = "";
+
         }
 
         private void ButtonClick_Subtract(object sender, EventArgs e)
@@ -129,7 +144,16 @@ namespace Calculator
 
         private void ButtonClick_Sign(object sender, EventArgs e)
         {
-            textBoxResult.Text = "-" + textBoxResult.Text;
+            negasign = "-";
+            
+            if (textBoxResult.Text.Contains(negasign))
+            {
+                textBoxResult.Text = textBoxResult.Text.Replace(negasign, "");
+            }
+            else
+            {
+                textBoxResult.Text = negasign + textBoxResult.Text;
+            }
         }
     }
 }
