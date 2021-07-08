@@ -33,7 +33,7 @@ namespace Calculator
             this.btn_0 = new System.Windows.Forms.Button();
             this.btn_dot = new System.Windows.Forms.Button();
             this.btn_equal = new System.Windows.Forms.Button();
-            this.btn_00 = new System.Windows.Forms.Button();
+            this.btn_Percent = new System.Windows.Forms.Button();
             this.btn_4 = new System.Windows.Forms.Button();
             this.btn_subtract = new System.Windows.Forms.Button();
             this.btn_6 = new System.Windows.Forms.Button();
@@ -93,18 +93,18 @@ namespace Calculator
             this.btn_equal.UseVisualStyleBackColor = false;
             this.btn_equal.Click += new System.EventHandler(this.ButtonClick_Equal);
             // 
-            // btn_00
+            // btn_Percent
             // 
-            this.btn_00.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btn_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_00.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_00.Location = new System.Drawing.Point(10, 344);
-            this.btn_00.Name = "btn_00";
-            this.btn_00.Size = new System.Drawing.Size(68, 53);
-            this.btn_00.TabIndex = 3;
-            this.btn_00.Text = "00";
-            this.btn_00.UseVisualStyleBackColor = false;
-            this.btn_00.Click += new System.EventHandler(this.Button_Click);
+            this.btn_Percent.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_Percent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Percent.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Percent.Location = new System.Drawing.Point(158, 108);
+            this.btn_Percent.Name = "btn_Percent";
+            this.btn_Percent.Size = new System.Drawing.Size(68, 53);
+            this.btn_Percent.TabIndex = 3;
+            this.btn_Percent.Text = "%";
+            this.btn_Percent.UseVisualStyleBackColor = false;
+            this.btn_Percent.Click += new System.EventHandler(this.ButtonClick_Percent);
             // 
             // btn_4
             // 
@@ -293,7 +293,7 @@ namespace Calculator
             this.btn_sign.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btn_sign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sign.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_sign.Location = new System.Drawing.Point(158, 108);
+            this.btn_sign.Location = new System.Drawing.Point(10, 344);
             this.btn_sign.Name = "btn_sign";
             this.btn_sign.Size = new System.Drawing.Size(68, 53);
             this.btn_sign.TabIndex = 17;
@@ -342,7 +342,6 @@ namespace Calculator
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.Size = new System.Drawing.Size(292, 40);
             this.textBoxResult.TabIndex = 21;
-            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // Calculator
             // 
@@ -369,7 +368,7 @@ namespace Calculator
             this.Controls.Add(this.btn_subtract);
             this.Controls.Add(this.btn_6);
             this.Controls.Add(this.btn_5);
-            this.Controls.Add(this.btn_00);
+            this.Controls.Add(this.btn_Percent);
             this.Controls.Add(this.btn_equal);
             this.Controls.Add(this.btn_dot);
             this.Controls.Add(this.btn_0);
@@ -390,7 +389,7 @@ namespace Calculator
         private System.Windows.Forms.Button btn_0;
         private System.Windows.Forms.Button btn_dot;
         private System.Windows.Forms.Button btn_equal;
-        private System.Windows.Forms.Button btn_00;
+        private System.Windows.Forms.Button btn_Percent;
         private System.Windows.Forms.Button btn_4;
         private System.Windows.Forms.Button btn_subtract;
         private System.Windows.Forms.Button btn_6;

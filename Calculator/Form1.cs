@@ -20,6 +20,8 @@ namespace Calculator
         bool operator_pressed = false;
         string negasign = "";
         string dot = "";
+        bool percent_pressed = false;
+        bool equal_pressed = false;
 
         public Calculator()
         {
@@ -41,19 +43,13 @@ namespace Calculator
                 textBoxResult.Text += numbers.Text;
                 value = textBoxResult.Text;
             }
-            else
+            if (textBoxDisplay.Text != "")
             {
                 textBoxResult.Text += numbers.Text;
                 value2 = textBoxResult.Text;
             }
-
-            string dot = ".";
-            if (textBoxResult.Text.Contains(dot))
-            {
-                dot = "";
-            }
             
-           
+
 
             
         }
@@ -67,10 +63,12 @@ namespace Calculator
 
         private void ButtonClick_Equal(object sender, EventArgs e)
         {
+            equal_pressed = true;
             if (operation == "+")
             {
-                textBoxDisplay.Text += value2;
-                textBoxResult.Text = (float.Parse(value) + float.Parse(textBoxResult.Text)).ToString();
+                textBoxDisplay.Text += textBoxResult.Text;
+                textBoxResult.Text = (float.Parse(value) + float.Parse(value2)).ToString();
+                dot = textBoxResult.Text;
             }
             if (operation == "-")
             {
@@ -103,18 +101,28 @@ namespace Calculator
 
         }
 
-        private void textBoxResult_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonClick_Add(object sender, EventArgs e)
         {
             operator_pressed = true;
             Button add = (Button)sender;
             operation = "+";
-            textBoxDisplay.Text = value + " " + add.Text + " ";
-            textBoxResult.Text = "";
+
+            if (textBoxResult.Text == "")
+            {
+                textBoxDisplay.Text = "";
+            }
+            else if (textBoxResult.Text != "" && textBoxResult.Text != value2)
+            {
+                textBoxDisplay.Text += textBoxResult.Text + " " + add.Text + " ";
+                textBoxResult.Text = "";
+            }
+            else if (textBoxResult.Text != "" && textBoxResult.Text == value2)
+            {
+                textBoxDisplay.Text += textBoxResult.Text + " " + add.Text + " ";
+                textBoxResult.Text = (float.Parse(value) + float.Parse(value2)).ToString();
+                dot = textBoxResult.Text;
+            }
+            
 
         }
 
@@ -123,7 +131,7 @@ namespace Calculator
             operator_pressed = true;
             Button subtract = (Button)sender;
             operation = "-";
-            textBoxDisplay.Text = value + subtract.Text;
+            textBoxDisplay.Text = value + " " + subtract.Text + " ";
             textBoxResult.Text = "";
         }
 
@@ -132,7 +140,7 @@ namespace Calculator
             operator_pressed = true;
             Button multiply = (Button)sender;
             operation = "x";
-            textBoxDisplay.Text = value + multiply.Text;
+            textBoxDisplay.Text = value + " " + multiply.Text + " ";
             textBoxResult.Text = "";
         }
 
@@ -141,7 +149,7 @@ namespace Calculator
             operator_pressed = true;
             Button divide = (Button)sender;
             operation = "/";
-            textBoxDisplay.Text = value + divide.Text;
+            textBoxDisplay.Text = value + " " + divide.Text + " ";
             textBoxResult.Text = "";
         }
 
@@ -157,6 +165,22 @@ namespace Calculator
             {
                 textBoxResult.Text = negasign + textBoxResult.Text;
             }
+        }
+
+        private void ButtonClick_Percent(object sender, EventArgs e)
+        {
+            percent_pressed = true;
+            if (textBoxDisplay.Text == "")
+            {
+                textBoxResult.Text = "";
+            }
+            else
+            {
+                textBoxResult.Text = textBoxResult.Text.Replace(textBoxResult.Text, (float.Parse(textBoxResult.Text)
+                    / 100).ToString());
+                value2 = textBoxResult.Text;
+            }
+           
         }
     }
 }
