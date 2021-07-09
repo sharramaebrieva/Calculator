@@ -12,12 +12,7 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        string value = "";
-        string operation = "";
-        bool operator_pressed = false;
-        string negasign = "";
-        string dot = "";
-        bool equal_pressed = false;
+        MyClassCalc NewCalc = new MyClassCalc();
 
         public Calculator()
         {
@@ -36,7 +31,7 @@ namespace Calculator
             if (textBoxDisplay.Text == "")
             {
                 textBoxResult.Text += numbers.Text;
-                value = textBoxResult.Text;
+                NewCalc.Value = textBoxResult.Text;
             }
             if (textBoxDisplay.Text != "")
             {
@@ -52,29 +47,30 @@ namespace Calculator
 
         private void ButtonClick_Equal(object sender, EventArgs e)
         {
-            equal_pressed = true;
-            if (operation == "+")
+            NewCalc.Equal_pressed = true;
+            
+            if (NewCalc.Operation == "+")
             {
                 textBoxDisplay.Text += textBoxResult.Text + " =";
-                textBoxResult.Text = (float.Parse(value) + float.Parse(textBoxResult.Text)).ToString();
+                textBoxResult.Text = (float.Parse(NewCalc.Value) + float.Parse(textBoxResult.Text)).ToString();
             }
             
-            if (operation == "-")
+            if (NewCalc.Operation == "-")
             {
                 textBoxDisplay.Text += textBoxResult.Text + " =";
-                textBoxResult.Text = (float.Parse(value) - float.Parse(textBoxResult.Text)).ToString();
+                textBoxResult.Text = (float.Parse(NewCalc.Value) - float.Parse(textBoxResult.Text)).ToString();
             }
 
-            if (operation == "x")
+            if (NewCalc.Operation == "x")
             {
                 textBoxDisplay.Text += textBoxResult.Text + " =";
-                textBoxResult.Text = (float.Parse(value) * float.Parse(textBoxResult.Text)).ToString();
+                textBoxResult.Text = (float.Parse(NewCalc.Value) * float.Parse(textBoxResult.Text)).ToString();
             }
 
-            if (operation == "/")
+            if (NewCalc.Operation == "/")
             {
                 textBoxDisplay.Text += textBoxResult.Text + " =";
-                textBoxResult.Text = (float.Parse(value) / float.Parse(textBoxResult.Text)).ToString();
+                textBoxResult.Text = (float.Parse(NewCalc.Value) / float.Parse(textBoxResult.Text)).ToString();
             }
         }
 
@@ -85,7 +81,7 @@ namespace Calculator
                 if (textBoxDisplay.Text == "")
                 {
                     textBoxResult.Text = textBoxResult.Text.Remove(textBoxResult.Text.Length - 1);
-                    value = textBoxResult.Text;
+                    NewCalc.Value = textBoxResult.Text;
                 }
                 else
                 {
@@ -97,14 +93,14 @@ namespace Calculator
 
         private void ButtonClick_Add(object sender, EventArgs e)
         {
-            operator_pressed = true;
+            NewCalc.Operator_pressed = true;
             Button add = (Button)sender;
-            operation = "+";
-            
-            if(equal_pressed == true)
+            NewCalc.Operation = "+";
+
+            if (NewCalc.Equal_pressed == true)
             {
                 textBoxDisplay.Text = textBoxResult.Text + " " + add.Text + " ";
-                value = textBoxResult.Text;
+                NewCalc.Value = textBoxResult.Text;
                 textBoxResult.Text = "";
             }
             else
@@ -112,19 +108,18 @@ namespace Calculator
                 textBoxDisplay.Text += textBoxResult.Text + " " + add.Text + " ";
                 textBoxResult.Text = "";
             }
-            
         }
 
         private void ButtonClick_Subtract(object sender, EventArgs e)
         {
-            operator_pressed = true;
+            NewCalc.Operator_pressed = true;
             Button subtract = (Button)sender;
-            operation = "-";
+            NewCalc.Operation = "-";
 
-            if (equal_pressed == true)
+            if (NewCalc.Equal_pressed == true)
             {
                 textBoxDisplay.Text = textBoxResult.Text + " " + subtract.Text + " ";
-                value = textBoxResult.Text;
+                NewCalc.Value = textBoxResult.Text;
                 textBoxResult.Text = "";
             }
             else
@@ -136,14 +131,14 @@ namespace Calculator
 
         private void ButtonClick_Multiply(object sender, EventArgs e)
         {
-            operator_pressed = true;
+            NewCalc.Operator_pressed = true;
             Button multiply = (Button)sender;
-            operation = "x";
+            NewCalc.Operation = "x";
 
-            if (equal_pressed == true)
+            if (NewCalc.Equal_pressed == true)
             {
                 textBoxDisplay.Text = textBoxResult.Text + " " + multiply.Text + " ";
-                value = textBoxResult.Text;
+                NewCalc.Value = textBoxResult.Text;
                 textBoxResult.Text = "";
             }
             else
@@ -155,14 +150,14 @@ namespace Calculator
 
         private void ButtonClick_Divide(object sender, EventArgs e)
         {
-            operator_pressed = true;
+            NewCalc.Operator_pressed = true;
             Button divide = (Button)sender;
-            operation = "/";
+            NewCalc.Operation = "/";
 
-            if (equal_pressed == true)
+            if (NewCalc.Equal_pressed == true)
             {
                 textBoxDisplay.Text = textBoxResult.Text + " " + divide.Text + " ";
-                value = textBoxResult.Text;
+                NewCalc.Value = textBoxResult.Text;
                 textBoxResult.Text = "";
             }
             else
@@ -174,15 +169,15 @@ namespace Calculator
 
         private void ButtonClick_Sign(object sender, EventArgs e)
         {
-            negasign = "-";
+            NewCalc.Negasign = "-";
             
-            if (textBoxResult.Text.Contains(negasign))
+            if (textBoxResult.Text.Contains(NewCalc.Negasign))
             {
-                textBoxResult.Text = textBoxResult.Text.Replace(negasign, "");
+                textBoxResult.Text = textBoxResult.Text.Replace(NewCalc.Negasign, "");
             }
             else
             {
-                textBoxResult.Text = negasign + textBoxResult.Text;
+                textBoxResult.Text = NewCalc.Negasign + textBoxResult.Text;
             }
         }
 
