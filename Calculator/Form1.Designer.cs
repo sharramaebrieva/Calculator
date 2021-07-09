@@ -326,8 +326,6 @@ namespace Calculator
             this.textBoxDisplay.Name = "textBoxDisplay";
             this.textBoxDisplay.Size = new System.Drawing.Size(292, 51);
             this.textBoxDisplay.TabIndex = 20;
-            this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxDisplay.TextChanged += new System.EventHandler(this.textBoxDisplay_TextChanged);
             // 
             // textBoxResult
             // 
@@ -342,6 +340,7 @@ namespace Calculator
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.Size = new System.Drawing.Size(292, 40);
             this.textBoxResult.TabIndex = 21;
+            this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calculator
             // 
